@@ -17,41 +17,40 @@
       text-align: center;
       min-height: 100vh;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 24px 16px;
     }
 
-    /* 🌊 Achtergrond (wazig) */
+    /* 🌊 Achtergrond */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background: url("./achtergrond.jpeg") center / cover no-repeat;
-      filter: blur(2px);
+      filter: blur(3px);
       transform: scale(1.1);
       z-index: -2;
     }
 
-    /* 🌸 Roze overlay */
+    /* 🌸 Overlay */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(248, 230, 235, 0.6);
+      background: rgba(248, 230, 235, 0.55);
       z-index: -1;
     }
 
-    /* 📦 Content kaart */
+    /* 📦 Card */
     .card {
       max-width: 700px;
-      margin: 40px auto;
+      margin: 0 auto;
       background: rgba(255, 255, 255, 0.92);
       border-radius: 24px;
       padding: 28px 24px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.16);
     }
 
-    <a href="./gallery.html" class="gallery-button">Bekijk onze collectie</a>
-    
     .logo {
       max-width: 200px;
       width: 100%;
@@ -71,6 +70,27 @@
       margin: 8px 0;
     }
 
+    /* 🔘 Gallery knop */
+    .gallery-button {
+      display: inline-block;
+      margin: 0 0 22px;
+      padding: 12px 22px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #5f4d53;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: all 0.2s ease;
+    }
+
+    .gallery-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+    }
+
+    /* 📷 QR */
     .qr {
       margin-top: 24px;
     }
@@ -97,9 +117,12 @@
 
     /* 📱 Mobiel */
     @media (max-width: 600px) {
+      body {
+        padding: 16px 10px;
+      }
+
       .card {
-        margin: 20px;
-        padding: 20px;
+        padding: 20px 16px;
       }
 
       .logo {
@@ -122,6 +145,7 @@
         width: 140px;
       }
     }
+
   </style>
 </head>
 
@@ -130,6 +154,11 @@
   <div class="card">
 
     <img src="./logotrans.png" alt="Leuke Sieraden logo" class="logo">
+
+    <!-- 🔘 Nieuwe knop -->
+    <a href="./gallery.html" class="gallery-button">
+      Bekijk onze collectie 💎
+    </a>
 
     <h1>Leuke Sieraden</h1>
     <p>Handgemaakt door Jaimie Stoel 💛</p>
