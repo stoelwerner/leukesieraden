@@ -21,7 +21,6 @@
       padding: 24px 16px;
     }
 
-    /* 🌊 Achtergrond */
     body::before {
       content: "";
       position: fixed;
@@ -32,7 +31,6 @@
       z-index: -2;
     }
 
-    /* 🌸 Overlay */
     body::after {
       content: "";
       position: fixed;
@@ -41,7 +39,6 @@
       z-index: -1;
     }
 
-    /* 📦 Card */
     .card {
       max-width: 1100px;
       margin: 0 auto;
@@ -53,6 +50,8 @@
 
     .logo {
       max-width: 140px;
+      width: 100%;
+      height: auto;
       margin-bottom: 10px;
     }
 
@@ -65,6 +64,7 @@
     p {
       color: #6b5c61;
       margin-bottom: 20px;
+      font-size: 17px;
     }
 
     .back {
@@ -77,9 +77,14 @@
       color: #5f4d53;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* 💎 Grid */
+    .back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -92,11 +97,12 @@
       overflow: hidden;
       box-shadow: 0 8px 22px rgba(0,0,0,0.10);
       padding-bottom: 14px;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .item:hover {
       transform: translateY(-4px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.14);
     }
 
     .image-button {
@@ -117,14 +123,38 @@
     .item-title {
       font-size: 16px;
       color: #5f4d53;
-      margin: 12px 0 6px;
+      margin: 12px 0 10px;
       font-weight: bold;
     }
 
-    /* 📱 QR klein */
+    .qr-toggle {
+      border: none;
+      background: rgba(255,255,255,0.8);
+      color: #5f4d53;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .qr-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.14);
+    }
+
+    .qr-box {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .qr-box.active {
+      display: block;
+    }
+
     .qr-small {
-      width: 70px;
-      margin-top: 8px;
+      width: 80px;
       border-radius: 10px;
       background: white;
       padding: 6px;
@@ -137,24 +167,24 @@
       margin-top: 6px;
     }
 
-    /* 🔍 Modal */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
-      z-index: 999;
+      background: rgba(0,0,0,0.82);
+      z-index: 9999;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .modal img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 12px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     }
 
-    /* 📱 Mobile */
     @media (max-width: 900px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -162,6 +192,26 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .card {
+        padding: 22px 14px 28px;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -170,15 +220,12 @@
         height: 220px;
       }
     }
-
   </style>
 </head>
-
 <body>
 
   <div class="card">
-
-    <img src="./logotrans.png" class="logo">
+    <img src="./logotrans.png" alt="Leuke Sieraden logo" class="logo">
 
     <h1>Onze collectie 💎</h1>
     <p>Handgemaakt door Jaimie Stoel</p>
@@ -189,38 +236,81 @@
 
       <div class="item">
         <button class="image-button" onclick="openModal('./foto1.jpg')">
-          <img src="./foto1.jpg">
+          <img src="./foto1.jpg" alt="Sieraad 1">
         </button>
-        <div class="item-title">Sleutelhanger</div>
-        <img src="./qr.png" class="qr-small">
-        <div class="qr-text">Scan voor info</div>
+        <div class="item-title">Sieraad 1</div>
+        <button class="qr-toggle" onclick="toggleQR('qr1')">Toon QR-code</button>
+        <div id="qr1" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
       </div>
 
       <div class="item">
         <button class="image-button" onclick="openModal('./foto2.jpg')">
-          <img src="./foto2.jpg">
+          <img src="./foto2.jpg" alt="Sieraad 2">
         </button>
-        <div class="item-title">Sleutelhanger</div>
-        <img src="./qr.png" class="qr-small">
-        <div class="qr-text">Scan voor info</div>
+        <div class="item-title">Sieraad 2</div>
+        <button class="qr-toggle" onclick="toggleQR('qr2')">Toon QR-code</button>
+        <div id="qr2" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
       </div>
 
       <div class="item">
         <button class="image-button" onclick="openModal('./foto3.jpg')">
-          <img src="./foto3.jpg">
+          <img src="./foto3.jpg" alt="Sieraad 3">
         </button>
-        <div class="item-title">Sleutelhanger</div>
-        <img src="./qr.png" class="qr-small">
-        <div class="qr-text">Scan voor info</div>
+        <div class="item-title">Sieraad 3</div>
+        <button class="qr-toggle" onclick="toggleQR('qr3')">Toon QR-code</button>
+        <div id="qr3" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="image-button" onclick="openModal('./foto4.jpg')">
+          <img src="./foto4.jpg" alt="Sieraad 4">
+        </button>
+        <div class="item-title">Sieraad 4</div>
+        <button class="qr-toggle" onclick="toggleQR('qr4')">Toon QR-code</button>
+        <div id="qr4" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="image-button" onclick="openModal('./foto5.jpg')">
+          <img src="./foto5.jpg" alt="Sieraad 5">
+        </button>
+        <div class="item-title">Sieraad 5</div>
+        <button class="qr-toggle" onclick="toggleQR('qr5')">Toon QR-code</button>
+        <div id="qr5" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="image-button" onclick="openModal('./foto6.jpg')">
+          <img src="./foto6.jpg" alt="Sieraad 6">
+        </button>
+        <div class="item-title">Sieraad 6</div>
+        <button class="qr-toggle" onclick="toggleQR('qr6')">Toon QR-code</button>
+        <div id="qr6" class="qr-box">
+          <img src="./qr.png" alt="QR code" class="qr-small">
+          <div class="qr-text">Scan voor meer info</div>
+        </div>
       </div>
 
     </div>
-
   </div>
 
-  <!-- 🔍 Modal -->
   <div id="modal" class="modal" onclick="closeModal()">
-    <img id="modalImg">
+    <img id="modalImg" src="" alt="Vergrote foto">
   </div>
 
   <script>
@@ -231,6 +321,11 @@
 
     function closeModal() {
       document.getElementById("modal").style.display = "none";
+    }
+
+    function toggleQR(id) {
+      const box = document.getElementById(id);
+      box.classList.toggle("active");
     }
   </script>
 
