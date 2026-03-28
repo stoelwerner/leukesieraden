@@ -1,34 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leuke Sieraden</title>
-
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: Arial, sans-serif;
       background: #f9f7f4;
+      color: #333;
       text-align: center;
-      padding-top: 50px;
     }
 
-    img {
-      width: 200px;
-      margin-bottom: 20px;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 18px;
-      color: #555;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      opacity: 0.9;
     }
   </style>
-
 </head>
-
 <body>
+  <div class="container">
+    <img src="logo.png" alt="Leuke Sieraden logo" class="logo">
 
-  <img src="JS_Logo.png">
+    <h1>Leuke Sieraden</h1>
+    <p>Handgemaakt door een jonge ondernemer van 10 jaar 💛</p>
 
-  <p>Handgemaakt door een jonge ondernemer van 10 jaar 💛</p>
+    <img src="hero.jpg" alt="Sieraden collectie" class="hero-image">
 
+    <br>
+    <a class="button" href="https://wa.me/31612345678">Bestellen via WhatsApp</a>
+  </div>
 </body>
 </html>
