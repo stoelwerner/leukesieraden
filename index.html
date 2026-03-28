@@ -10,33 +10,44 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    body {
       margin: 0;
-      min-height: 100%;
       font-family: Arial, sans-serif;
       color: #333;
-    }
-
-    body {
-      background:
-        linear-gradient(rgba(248, 230, 235, 0.55), rgba(248, 230, 235, 0.55)),
-        url("./achtergrond.jpg") center center / cover no-repeat fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
       text-align: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
 
+    /* 🌊 Achtergrond (wazig) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("./achtergrond.jpg") center / cover no-repeat;
+      filter: blur(12px);
+      transform: scale(1.1);
+      z-index: -2;
+    }
+
+    /* 🌸 Roze overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(248, 230, 235, 0.6);
+      z-index: -1;
+    }
+
+    /* 📦 Content kaart */
     .card {
-      width: 100%;
       max-width: 700px;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 24px;
       padding: 28px 24px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.16);
     }
 
     .logo {
@@ -47,54 +58,46 @@
     }
 
     h1 {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 30px;
       color: #5f4d53;
-      letter-spacing: 0.5px;
     }
 
     p {
-      margin: 8px 0;
       font-size: 18px;
       color: #6b5c61;
+      margin: 8px 0;
     }
 
     .qr {
-      margin-top: 26px;
+      margin-top: 24px;
     }
 
     .qr h2 {
-      margin: 0 0 14px 0;
       font-size: 22px;
       color: #5f4d53;
+      margin-bottom: 12px;
     }
 
     .qr img {
       width: 170px;
-      max-width: 100%;
       border-radius: 16px;
       background: #fff;
       padding: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .subtitle {
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 15px;
       color: #7a6a70;
     }
 
+    /* 📱 Mobiel */
     @media (max-width: 600px) {
-      body {
-        padding: 14px;
-        background:
-          linear-gradient(rgba(248, 230, 235, 0.68), rgba(248, 230, 235, 0.68)),
-          url("./achtergrond.jpeg") center center / cover no-repeat;
-      }
-
       .card {
-        padding: 22px 18px;
-        border-radius: 20px;
+        margin: 20px;
+        padding: 20px;
       }
 
       .logo {
@@ -102,7 +105,7 @@
       }
 
       h1 {
-        font-size: 25px;
+        font-size: 24px;
       }
 
       p {
@@ -114,24 +117,28 @@
       }
 
       .qr img {
-        width: 145px;
+        width: 140px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <div class="card">
-    <img src="./logotrans.png" alt="Leuke Sieraden logo" class="logo">
+
+    <img src="./logo.png" alt="Leuke Sieraden logo" class="logo">
 
     <h1>Leuke Sieraden</h1>
-    <p>Handgemaakt door Jaimie Stoel</p>
+    <p>Handgemaakt door Jaimie Stoel 💛</p>
 
     <div class="qr">
       <h2>Scan om ons te volgen</h2>
       <img src="./qr.png" alt="QR code WhatsApp kanaal">
-      <p class="subtitle">Scan de QR-code om ons WhatsApp kanaal te bekijken</p>
+      <p class="subtitle">Scan de QR-code om ons WhatsApp kanaal te bekijken ✨</p>
     </div>
+
   </div>
+
 </body>
 </html>
