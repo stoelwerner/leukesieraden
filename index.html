@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9f7f4;
+      background: #f8e6eb;
       color: #333;
       text-align: center;
     }
@@ -21,18 +21,32 @@
     }
 
     .logo {
-      width: 200px;
+      max-width: 260px;
+      width: 100%;
+      height: auto;
       margin-bottom: 25px;
+      background: white;
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 24px;
+      color: #5f4d53;
     }
 
     p {
       font-size: 18px;
-      color: #666;
+      color: #6b5c61;
+      margin: 10px 0;
     }
 
     .qr {
@@ -43,33 +57,30 @@
       width: 200px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white;
+      padding: 8px;
     }
 
     .subtitle {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 16px;
-      color: #777;
+      color: #7a6a70;
     }
-
   </style>
 </head>
 
 <body>
-
   <div class="container">
-
-    <img src="logo.png" alt="Leuke Sieraden logo" class="logo">
+    <img src="./logo.png" alt="Leuke Sieraden logo" class="logo">
 
     <h1>Leuke Sieraden 💎</h1>
-    <p>Handgemaakt door Jaimie Stoel 💛</p>
+    <p>Handgemaakt door een jonge ondernemer van 10 jaar 💛</p>
 
     <div class="qr">
       <h2>Scan om ons te volgen</h2>
-      <img src="qr.png" alt="QR code WhatsApp kanaal">
+      <img src="./qr.png" alt="QR code WhatsApp kanaal">
       <p class="subtitle">Scan de QR-code om ons WhatsApp kanaal te bekijken ✨</p>
     </div>
-
   </div>
-
 </body>
 </html>
