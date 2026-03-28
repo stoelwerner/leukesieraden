@@ -6,89 +6,111 @@
   <title>Leuke Sieraden</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
+      min-height: 100%;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #f8e6eb 0%, #fdf4f6 100%);
       color: #333;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(248, 230, 235, 0.55), rgba(248, 230, 235, 0.55)),
+        url("./achtergrond.jpg") center center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
       text-align: center;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px 20px 24px;
+    .card {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
     }
 
     .logo {
-      max-width: 180px;
+      max-width: 200px;
       width: 100%;
       height: auto;
-      margin-bottom: 16px;
-      background: white;
-      padding: 10px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 28px;
-      margin: 0 0 8px 0;
+      margin: 0 0 10px 0;
+      font-size: 30px;
+      color: #5f4d53;
       letter-spacing: 0.5px;
     }
 
-    h2 {
-      margin: 20px 0 10px 0;
+    p {
+      margin: 8px 0;
+      font-size: 18px;
+      color: #6b5c61;
+    }
+
+    .qr {
+      margin-top: 26px;
+    }
+
+    .qr h2 {
+      margin: 0 0 14px 0;
       font-size: 22px;
       color: #5f4d53;
     }
 
-    p {
-      font-size: 17px;
-      color: #6b5c61;
-      margin: 6px 0;
-    }
-
-    .qr {
-      margin-top: 20px;
-    }
-
     .qr img {
       width: 170px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      background: white;
-      padding: 8px;
+      max-width: 100%;
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
     .subtitle {
-      margin-top: 8px;
+      margin-top: 12px;
       font-size: 15px;
       color: #7a6a70;
     }
 
-    @media (max-height: 750px) {
-      .container {
-        padding-top: 14px;
-        padding-bottom: 16px;
+    @media (max-width: 600px) {
+      body {
+        padding: 14px;
+        background:
+          linear-gradient(rgba(248, 230, 235, 0.68), rgba(248, 230, 235, 0.68)),
+          url("./achtergrond.jpg") center center / cover no-repeat;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 20px;
       }
 
       .logo {
         max-width: 150px;
-        margin-bottom: 12px;
       }
 
       h1 {
-        font-size: 24px;
-      }
-
-      h2 {
-        font-size: 20px;
-        margin-top: 16px;
+        font-size: 25px;
       }
 
       p {
-        font-size: 15px;
+        font-size: 16px;
+      }
+
+      .qr h2 {
+        font-size: 20px;
       }
 
       .qr img {
@@ -99,7 +121,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="card">
     <img src="./logo.png" alt="Leuke Sieraden logo" class="logo">
 
     <h1>Leuke Sieraden</h1>
