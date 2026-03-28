@@ -75,18 +75,19 @@
 
     /* 🔘 Gallery knop */
     .gallery-button {
-      display: inline-block;
-      margin: 0 0 22px;
-      padding: 12px 22px;
-      background: rgba(255, 255, 255, 0.95);
-      color: #5f4d53;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 999px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      transition: all 0.2s ease;
-    }
+  display: block;              /* 🔥 dit is de key */
+  width: fit-content;          /* knop blijft compact */
+  margin: 0 auto 22px;         /* centreert hem */
+  padding: 12px 22px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #5f4d53;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: all 0.2s ease;
+}
 
     .gallery-button:hover {
       transform: translateY(-2px);
