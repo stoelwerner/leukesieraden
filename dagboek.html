@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dagboek | Leuke Sieraden</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("./achtergrond.jpeg") center / cover no-repeat;
+      filter: blur(3px);
+      transform: scale(1.1);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(248, 230, 235, 0.55);
+      z-index: -1;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(248, 230, 235, 0.92);
+      border-radius: 24px;
+      padding: 28px 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.16);
+      text-align: left;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5f4d53;
+    }
+
+    .post {
+      margin-bottom: 24px;
+      padding: 16px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 16px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: #7a6a70;
+      margin-bottom: 6px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background: white;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #5f4d53;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <a href="./index.html" class="back">← Terug</a>
+
+    <h1>Dagboek ✨</h1>
+
+    <div class="post">
+      <div class="date">28 maart 2026</div>
+      Vandaag heb ik nieuwe armbandjes gemaakt 💛  
+      Ik ben nog aan het oefenen maar het wordt steeds beter!
+    </div>
+
+    <div class="post">
+      <div class="date">25 maart 2026</div>
+      Mijn eerste sieraden staan nu online 😍  
+      Ik vind het heel leuk om dit te doen!
+    </div>
+
+  </div>
+
+</body>
+</html>
